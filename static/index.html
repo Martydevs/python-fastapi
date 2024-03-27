@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Inicio</title>
+</head>
+<body>
+  <main class="container">
+    <header class="header__container">
+      <h1>Alineador de secuencias</h1>
+      <nav>
+        <ul>
+          <li class="animate__animated animate__fadeIn"><a href="/">Inicio</a></li>
+          <li class="animate__animated animate__fadeIn"><a href="#about">Acerca de</a></li>
+          <li class="animate__animated animate__fadeIn"><a href="#contacto">Envíame un correo</a></li>
+        </ul>
+      </nav>
+      <span class="switcher__container">
+        <label for="theme-switcher">
+          <i class="bi bi-moon-fill"></i>
+        </label>
+        <input type="checkbox" name="theme-switcher" id="theme-switcher" role="switch">
+        <label for="theme-switcher">
+          <i class="bi bi-sun-fill"></i>
+        </label>
+      </span>
+    </header>
+    <section class="form__container">
+      <form class="form">
+        <fieldset>
+          <label for="secuencia-uno" class="animate__animated animate__fadeInLeft">
+            Primera secuencia
+            <input type="text" id="secuencia-uno" name="secuenciaUno" required>
+          </label>
+
+          <label for="secuencia-dos" class="animate__animated animate__fadeInRight">
+            Segunda secuencia
+            <input type="text" id="secuencia-dos" name="secuenciaDos" required>
+          </label>
+        </fieldset>
+
+        <section class="buttons__container animate__animated animate__fadeInUp">
+          <button type="submit">
+            <i class="bi bi-stars"></i>
+            Alinear
+          </button>
+          <button type="reset">
+            <i class="bi bi-x-circle-fill"></i>
+            Limpiar
+          </button>
+        </section>
+      </form>
+    </section>
+
+    <section id="result" class="animate__animated animate__zoomIn">
+    </section>
+  </main>
+
+  <script defer src="./js/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css" />
+</body>
+
+</html>
