@@ -4,7 +4,7 @@ from fastapi.responses import PlainTextResponse
 from services.alignment import alignmentService
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app.mount("/home", StaticFiles(directory="static", html=True), name="static")
 
 @app.get("/")
 async def index():
