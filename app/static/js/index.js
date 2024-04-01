@@ -1,3 +1,5 @@
+import { CSSIcon, FastapiIcon, HTMLIcon, JSIcon, NumpyIcon, PythonIcon } from './icons.js';
+
 const resultContainer = document.getElementById("result");
 const html = document.querySelector("html");
 const resetBtn = document.getElementById("reset");
@@ -31,3 +33,10 @@ document.querySelector("form").addEventListener("submit", (e) => {
 resetBtn.addEventListener("click", () => {
   resultContainer.textContent = "";
 });
+
+customElements.define("fastapi-icon", FastapiIcon);
+customElements.define("numpy-icon", NumpyIcon);
+customElements.define("python-icon", PythonIcon);
+customElements.define("html-icon", HTMLIcon);
+customElements.define("css-icon", CSSIcon);
+customElements.define("javascript-icon", JSIcon);

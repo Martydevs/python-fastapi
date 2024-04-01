@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +11,14 @@
   <link rel="stylesheet" href="./styles/styles.css">
   <title>Inicio</title>
 </head>
+
 <body>
   <main class="container">
     <header class="header__container">
       <h1>Alineador de secuencias</h1>
       <nav>
         <ul>
-          <li class="animate__animated animate__fadeIn"><a href="/">Inicio</a></li>
-          <li class="animate__animated animate__fadeIn"><a href="#about">Acerca de</a></li>
-          <li class="animate__animated animate__fadeIn"><a href="#contacto">Envíame un correo</a></li>
+          <li class="animate__animated animate__fadeIn"><a href="#about">Acerca del projecto</a></li>
         </ul>
       </nav>
       <span class="switcher__container">
@@ -65,7 +65,65 @@
     </section>
   </main>
 
-  <script defer src="./js/index.js"></script>
+  <section class="about__container">
+    <h2 id="about">Acerca del proyecto</h2>
+
+    <article>
+      <header>
+        <h4>Objetivo del proyecto</h4>
+      </header>
+      <p>
+        Encontrar la mejor alineación global entre dos secuencias de ADN usando el algoritmo de Needleman-Wunsch.
+      </p>
+    </article>
+
+    <article>
+      <header>
+        <h4>
+          Tecnologías usadas
+        </h4>
+      </header>
+
+      <section class="icons__container">
+        <span data-tooltip="Un framework web rápido y eficiente." data-placement="bottom">
+          <fastapi-icon width="160" height="160"></fastapi-icon>
+        </span>
+        <span data-tooltip="Libreria para operar con matrices y estructuras multidimensionales."
+          data-placement="bottom">
+          <numpy-icon width="120" height="120"></numpy-icon>
+        </span>
+        <span data-tooltip="Python, lenguaje de programación potente, rápido y versátil" data-placement="bottom">
+          <python-icon width="120" height="120"></python-icon>
+        </span>
+        <span data-tooltip="HTML, el lenguaje de marcado para estructurar la web." data-placement="bottom">
+          <html-icon width="120" height="120"></html-icon>
+        </span>
+        <span data-tooltip="CSS, el lenguaje de marcado de estilos en cascada para diseño." data-placement="bottom">
+          <css-icon width="120" height="120"></css-icon>
+        </span>
+        <span data-tooltip="JavaScript, el lenguaje de programación universal de la web." data-placement="bottom">
+          <javascript-icon width="120" height="120"></javascript-icon>
+        </span>
+      </section>
+    </article>
+
+    <article>
+      <header>
+        <h4>
+          Casos de uso
+        </h4>
+      </header>
+
+      <ul>
+        <li>Biología molecular</li>
+        <li>Biología computacional</li>
+        <li>Genética</li>
+        <li>Investigación científica</li>
+      </ul>
+    </article>
+  </section>
+
+  <script defer type="module" src="./js/index.js"></script>
 </body>
 
 </html>
