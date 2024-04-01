@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
+from fastapi.responses import PlainTextResponse
 from services.alignment import alignmentService
 
 app = FastAPI()
@@ -10,14 +10,10 @@ app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 async def index():
   return { "Hello from" : "FastAPI" }
 
-@app.get("/align/{s1}/{s2}", response_class=HTMLResponse)
+@app.get("/align/{s1}/{s2}", response_class=PlainTextResponse)
 async def align(s1: str, s2: str):
   result = alignmentService(s1, s2)
   return f"""
-    <code>
-      <pre>
-{result["x"]}
-{result["y"]}
-      </pre>
-    </code>
+  {result["x"]}
+  {result["y"]}
   """
