@@ -1,4 +1,0 @@
-biopython==1.83
-fastapi==0.110.0
-uvicorn[standard]==0.29.0
-numpy==1.26.4
