@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/static/js/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "alwaysStrict": true
+  }
+}
