@@ -4,7 +4,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import PlainTextResponse
 from services.alignment import alignmentService
 
-app = FastAPI()
+app = FastAPI(
+  title="PyAligner API",
+  version="1.0"
+)
 app.mount("/home", StaticFiles(directory="static", html=True), name="static")
 
 @app.get("/")
