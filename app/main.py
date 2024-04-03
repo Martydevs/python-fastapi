@@ -1,3 +1,4 @@
+from decouple import config
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import PlainTextResponse
@@ -17,3 +18,7 @@ async def align(s1: str, s2: str):
   {result["x"]}
   {result["y"]}
   """
+
+@app.get("/env")
+async def get_env():
+  return { "value" : str(config("GEMINI_APIKEY")) }
