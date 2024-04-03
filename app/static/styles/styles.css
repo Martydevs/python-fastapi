@@ -84,13 +84,19 @@
 
 .buttons__container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  width: 70%;
 
   & button {
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
+    min-height: 90px;
+    min-width: 190px;
   }
+}
+
+button {
+  margin: 0;
+  border: none;
 }
 
 .result__container {

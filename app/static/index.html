@@ -13,6 +13,35 @@
 </head>
 
 <body>
+  <dialog id="d">
+    <form method="dialog" id="gemini-form">
+      <article>
+        <header>
+          <h2>Generar secuencias con IA</h2>
+        </header>
+        <section>
+          <fieldset role="group">
+            <select name="select" id="seleccion-secuencia" aria-label="Seleccione una opción">
+              <option selected disabled value="">Seleccione una opción</option>
+              <option value="ADN">ADN</option>
+              <option value="ARN">ARN</option>
+              <option value="Proteinas">Proteínas</option>
+              <option value="Cadenas">Texto</option>
+            </select>
+            <button type="button" id="btn-g-secuencia">
+              <i class="bi bi-stars"></i>
+            </button>
+          </fieldset>
+        </section>
+        <footer>
+          <button onclick="d.close()" id="cerrar-modal">
+            Aceptar
+          </button>
+        </footer>
+      </article>
+    </form>
+  </dialog>
+
   <main class="container">
     <header class="header__container">
       <h1>Alineador de secuencias</h1>
@@ -32,22 +61,26 @@
       </span>
     </header>
     <section class="form__container">
-      <form class="form">
+      <form class="form" id="align-sequence-form" autocomplete="off">
         <fieldset>
           <label for="secuencia-uno" class="animate__animated animate__fadeInLeft">
             Primera secuencia
-            <input type="text" id="secuencia-uno" name="secuenciaUno" required>
+            <input type="text" id="secuencia-uno" name="secuenciaUno">
           </label>
 
           <label for="secuencia-dos" class="animate__animated animate__fadeInRight">
             Segunda secuencia
-            <input type="text" id="secuencia-dos" name="secuenciaDos" required>
+            <input type="text" id="secuencia-dos" name="secuenciaDos">
           </label>
         </fieldset>
 
         <section class="buttons__container animate__animated animate__fadeInUp">
-          <button type="submit">
+          <button type="button" class="contrast" onclick="d.showModal()">
             <i class="bi bi-stars"></i>
+            Generar
+          </button>
+          <button type="submit">
+            <i class="bi bi-transparency"></i>
             Alinear
           </button>
           <button type="reset" id="reset">
