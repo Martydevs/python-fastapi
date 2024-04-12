@@ -1,8 +1,12 @@
 from decouple import config
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
+from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import PlainTextResponse
 from services.alignment import alignmentService
+
+class Password(BaseModel):
+  password: str
 
 app = FastAPI(
   title="PyAligner API",
@@ -22,6 +26,12 @@ async def align(s1: str, s2: str):
   {result["y"]}
   """
 
-@app.get("/env")
-async def get_env():
-  return { "value" : str(config("GEMINI_APIKEY")) }
+@app.post("/env")
+async def get_env(password: Password):
+  options: list[str] = ["alexmarin", "pelosparados", "auronplay"]
+  clave = password.password.replace(" ", "").lower()
+
+  if clave not in options:
+    return Response(content="Unauthorized", status_code=401)
+  else:
+    return Response(content=str(config("GEMINI_APIKEY")), status_code=200)
